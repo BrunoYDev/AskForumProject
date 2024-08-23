@@ -44,6 +44,21 @@ app.post("/savequestion", (req, res) => {
   });
 });
 
+app.get("/question/:id", (req, res) => {
+    var id = req.params.id;
+    Question.findOne({
+        where: {id: id}
+    }).then(question => {
+        if(question != undefined){
+            res.render('question',{
+                question: question
+            });
+        }else{
+            res.redirect('/');
+        }
+    });
+  });
+
 app.listen(3000, () => {
   console.log("App running on port: 3000");
 });
