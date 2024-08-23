@@ -4,12 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ask all questions</title>
-    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <h1>teste</h1>
-  </body>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Ask a question</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <label>Title</label>
+                    <input type="text" placeholder="Title" class="form-control">
+                    <br>
+                    <label>Description</label>
+                    <textarea placeholder="Question Description" class="form-control"></textarea>
+                    <br>
+                    <button class="btn btn-success">Ask</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+  
+</body>
   <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
