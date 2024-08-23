@@ -3,6 +3,7 @@ const app = express();
 const connection = require("./database/database");
 const questionModel = require("./database/Question");
 const Question = require("./database/Question");
+const Answer = require('./database/Answer');
 const { Order } = require("sequelize");
 
 connection
