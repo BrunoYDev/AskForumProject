@@ -3,8 +3,8 @@ const app = express();
 const connection = require("./database/database");
 const questionModel = require("./database/Question");
 const Question = require("./database/Question");
-const Answer = require('./database/Answer');
-const { Order } = require("sequelize");
+const Answer = require("./database/Answer");
+const { Order, where } = require("sequelize");
 
 connection
   .authenticate()
@@ -46,19 +46,40 @@ app.post("/savequestion", (req, res) => {
 });
 
 app.get("/question/:id", (req, res) => {
-    var id = req.params.id;
-    Question.findOne({
-        where: {id: id}
-    }).then(question => {
-        if(question != undefined){
-            res.render('question',{
-                question: question
-            });
-        }else{
-            res.redirect('/');
-        }
-    });
+  var id = req.params.id;
+  Question.findOne({
+    where: { id: id },
+  }).then((question) => {
+    if (question != undefined) {
+      Answer.findAll({
+        where: {
+          questionId: question.id,
+        },
+        order:[ ['id', 'DESC'] ],
+      }).then((answers) => {
+        res.render('question',{
+          question: question,
+          answers: answers
+        })
+      });
+      
+    } else {
+      res.redirect("/");
+    }
   });
+});
+
+app.post("/answer", (req, res) => {
+  let body = req.body.questionBody;
+  let questionId = req.body.questionId;
+
+  Answer.create({
+    body: body,
+    questionId: questionId,
+  }).then(() => {
+    res.redirect(`/question/${questionId}`);
+  });
+});
 
 app.listen(3000, () => {
   console.log("App running on port: 3000");
