@@ -1,4 +1,4 @@
-# Q&A Forum (Fórum de Perguntas)
+# Q&A Forum
 
 This project is a complete, server-side rendered Q&A forum application, similar to a classic discussion board. It was built to study and implement a full-stack application using Node.js, Express, and the Sequelize ORM to interact with a relational database.
 
