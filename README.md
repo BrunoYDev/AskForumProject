@@ -13,9 +13,9 @@ Users can ask questions, view them on the home page, and provide answers to exis
 
 ## 🚀 Tech Stack
 
-* [cite_start]**Back-End:** [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/) [cite: 105, 108]
-* [cite_start]**Database:** [MySQL](https://www.mysql.com/) with [Sequelize](https://sequelize.org/) (ORM) [cite: 108, 114]
-* [cite_start]**View Engine:** [EJS (Embedded JavaScript)](https://ejs.co/) for Server-Side Rendering [cite: 108]
+* **Back-End:** [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/)
+* **Database:** [MySQL](https://www.mysql.com/) with [Sequelize](https://sequelize.org/) (ORM)
+* **View Engine:** [EJS (Embedded JavaScript)](https://ejs.co/) for Server-Side Rendering
 * **Styling:** Express Static for serving CSS files.
 
 ## 🔧 Getting Started
